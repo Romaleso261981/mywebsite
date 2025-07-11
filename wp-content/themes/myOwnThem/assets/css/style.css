@@ -9,3 +9,84 @@
 * Text Domain: my-own-theme
 * Domain Path: /languages
 */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.resume {
+  background: #fff;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.footer-content {
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+  padding: 10px 0;
+  color: #000;
+}
+
+.header-content {
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+  padding: 10px 0;
+  color: #000;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+.contacts {
+  background: #7b61ff;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.contacts p {
+  margin: 5px 0;
+}
+
+h2 {
+  color: #6b6bff;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: disc;
+  margin: 10px 0 10px 20px;
+  padding: 0;
+}
+
+a {
+  color: #4a4aff;
+  text-decoration: none;
+}
