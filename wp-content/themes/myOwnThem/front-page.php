@@ -13,7 +13,9 @@
                 </h1>
                 <?php endif; ?>
                 <?php if (get_field('description')): ?>
-                <p><?php the_field('description'); ?></p>
+                <p>
+                    <?php the_field('description'); ?>
+                </p>
                 <?php endif; ?>
             </div>
         </div>
@@ -42,16 +44,10 @@
                 <?php the_field('project_1_title'); ?>
                 <?php endif; ?>
             </li>
-            <li><a href="<?php if (get_field('project_2_link')): ?>
+            <li><a href="<?php the_field('project_2_link'); ?>">
                     <?php the_field('project_2_link'); ?>
-                    <?php endif; ?>">
-                    <?php if (get_field('project_2_link')): ?>
-                    <?php the_field('project_2_link'); ?>
-                    <?php endif; ?>
                 </a>
-                <?php if (get_field('project_2_title')): ?>
                 <?php the_field('project_2_title'); ?>
-                <?php endif; ?>
             </li>
             <li><a href="<?php if (get_field('project_3_link')): ?>
                     <?php the_field('project_3_link'); ?>
