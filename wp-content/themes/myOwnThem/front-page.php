@@ -14,11 +14,11 @@
     </div>
 
     <div class="contacts">
+
       <h3>Contacts</h3>
       <p><strong>Phone:</strong> +1 (555) 123-4567</p>
       <p><strong>Email:</strong> mike@gmail.com</p>
     </div>
-
     <h2>Projects</h2>
     <ol>
       <li><a href="https://mikeivanov.com">https://mikeivanov.com</a> — HTML5, CSS3, JavaScript</li>
