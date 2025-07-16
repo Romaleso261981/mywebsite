@@ -61,22 +61,6 @@
                 <?php endif; ?>
             </li>
         </ol>
-        <?php
-        for ($i = 0; $i < 5; $i++) {
-            echo "Номер ітерації: $i<br>";
-        }
-        ?>
-
-        <?php
-        $hours = 30;
-
-        if ($hours >= 40) {
-            echo "<p>Повний робочий день.</p>";
-        } else {
-            echo "<p>Скорочений робочий день.</p>";
-        }
-        ?>
-
         <h2>Soft Skills</h2>
         <ul>
             <li>Problem-Solving</li>
