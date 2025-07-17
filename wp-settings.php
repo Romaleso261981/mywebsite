@@ -30,10 +30,7 @@ define( 'WPINC', 'wp-includes' );
  * @global string   $required_mysql_version  The required MySQL version string.
  * @global string   $wp_local_package        Locale code of the package.
  */
-
- global $wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_php_extensions, $required_mysql_version, $wp_local_package;
-
-
+global $wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_php_extensions, $required_mysql_version, $wp_local_package;
 require ABSPATH . WPINC . '/version.php';
 require ABSPATH . WPINC . '/compat.php';
 require ABSPATH . WPINC . '/load.php';
