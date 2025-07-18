@@ -3,6 +3,7 @@
 <body>
 
     <div class="resume">
+        <?php echo custom_welcome_message(); ?>
         <div class="header">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/avatar.png" alt="Mike">
             <div>
@@ -31,7 +32,7 @@
             <p><strong>Email:</strong> <?php the_field('email'); ?></p>
             <?php endif; ?>
         </div>
-        <h2>Projects</h2>
+        <?php custom_heading('Projects'); ?>
         <ol>
             <li><a href="<?php if (get_field('project_1_link')): ?>
                     <?php the_field('project_1_link'); ?>
@@ -61,7 +62,7 @@
                 <?php endif; ?>
             </li>
         </ol>
-        <h2>Soft Skills</h2>
+        <?php custom_heading('Soft Skills'); ?>
         <ul>
             <li>Problem-Solving</li>
             <li>Teamwork</li>
@@ -71,7 +72,7 @@
             <li>Attention to Detail</li>
         </ul>
 
-        <h2>Hard Skills</h2>
+        <?php custom_heading('Hard Skills'); ?>
         <ul>
             <li>HTML5</li>
             <li>CSS3</li>
@@ -80,6 +81,45 @@
             <li>Node.js</li>
             <li>Git</li>
         </ul>
+
+        <?php custom_heading('Останні записи'); ?>
+        <div class="recent-posts">
+            <?php
+            $recent_posts = new WP_Query(array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'post_status' => 'publish'
+            ));
+
+            if ($recent_posts->have_posts()) :
+                while ($recent_posts->have_posts()) : $recent_posts->the_post();
+            ?>
+            <article class="post-preview">
+                <h3 class="post-title">
+                    <a href="<?php echo get_permalink(); ?>">
+                        <?php echo esc_html(get_the_title()); ?>
+                    </a>
+                </h3>
+                <div class="post-meta">
+                    <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
+                    <span class="post-author"><?php echo esc_html(get_the_author()); ?></span>
+                </div>
+                <div class="post-excerpt">
+                    <?php echo esc_html(wp_trim_words(get_the_excerpt(), 20, '...')); ?>
+                </div>
+                <a href="<?php echo esc_url(get_permalink()); ?>" class="read-more">
+                    Читати далі →
+                </a>
+            </article>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                ?>
+            <p>Записів поки немає. <a href="<?php echo esc_url(admin_url('post-new.php')); ?>">Створити перший запис</a>
+            </p>
+            <?php endif; ?>
+        </div>
     </div>
 
 </body>
