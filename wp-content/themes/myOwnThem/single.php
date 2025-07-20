@@ -29,10 +29,7 @@ get_header(); ?>
                 the_content();
                 ?>
             </div>
-
-            І
         </article>
-
     </div>
 </main>
 
