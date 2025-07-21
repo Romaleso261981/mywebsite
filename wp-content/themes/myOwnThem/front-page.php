@@ -106,8 +106,9 @@
                 wp_reset_postdata();
             else :
                 ?>
-            <p>Записів поки немає. <a href="<?php echo esc_url(admin_url('post-new.php')); ?>">Створити перший
-                    запис</a>
+            <p>
+                Записів поки немає.
+                <a href="<?php echo esc_url(admin_url('post-new.php')); ?>">Створити перший запис</a>
             </p>
             <?php endif; ?>
         </div>

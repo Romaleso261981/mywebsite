@@ -30,7 +30,5 @@
   },
   "php.validate.enable": true,
   "php.suggest.basic": false,
-  "intelephense.format.enable": true,
-  "intelephense.format.indentSize": 4,
-  "intelephense.format.tabSize": 4
+  "intelephense.format.enable": true
 }
