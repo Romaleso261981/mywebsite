@@ -32,55 +32,45 @@
             <p><strong>Email:</strong> <?php the_field('email'); ?></p>
             <?php endif; ?>
         </div>
+        <?php if (have_rows('projects')): ?>
         <?php custom_heading('Projects'); ?>
-        <ol>
-            <li><a href="<?php if (get_field('project_1_link')): ?>
-                    <?php the_field('project_1_link'); ?>
-                    <?php endif; ?>">
-                    <?php if (get_field('project_1_link')): ?>
-                    <?php the_field('project_1_link'); ?>
-                    <?php endif; ?>
-                </a>
-                <?php if (get_field('project_1_title')): ?>
-                <?php the_field('project_1_title'); ?>
-                <?php endif; ?>
-            </li>
-            <li><a href="<?php the_field('project_2_link'); ?>">
-                    <?php the_field('project_2_link'); ?>
-                </a>
-                <?php the_field('project_2_title'); ?>
-            </li>
-            <li><a href="<?php if (get_field('project_3_link')): ?>
-                    <?php the_field('project_3_link'); ?>
-                    <?php endif; ?>">
-                    <?php if (get_field('project_3_link')): ?>
-                    <?php the_field('project_3_link'); ?>
-                    <?php endif; ?>
-                </a>
-                <?php if (get_field('project_3_title')): ?>
-                <?php the_field('project_3_title'); ?>
-                <?php endif; ?>
-            </li>
-        </ol>
+        <?php
+            echo '<ol>';
+            while (the_repeater_field('projects')) {
+                echo '<li>' . "<a>" . get_sub_field('project') . '</a>' . ' ' . 'HTML5, CSS3, JavaScript' . '</li>';
+                echo '<li>' . "<a>" . get_sub_field('project') . '</a>' . ' ' . 'HTML5, CSS3, JavaScript' . '</li>';
+                echo '<li>' . "<a>" . get_sub_field('project') . '</a>' . ' ' . 'HTML5, CSS3, JavaScript' . '</li>';
+            }
+            echo '</ol>';
+            ?>
+        <?php endif; ?>
+        <?php if (have_rows('soft_skills')): ?>
         <?php custom_heading('Soft Skills'); ?>
-        <ul>
-            <li>Problem-Solving</li>
-            <li>Teamwork</li>
-            <li>Communication</li>
-            <li>Adaptability</li>
-            <li>Time Management</li>
-            <li>Attention to Detail</li>
-        </ul>
+        <?php
+            echo '<ul>';
+            while (the_repeater_field('soft_skills')) {
+                echo '<li>' . get_sub_field('skill') . '</li>';
+                echo '<li>' . get_sub_field('skill2') . '</li>';
+                echo '<li>' . get_sub_field('skill3') . '</li>';
+                echo '<li>' . get_sub_field('skill4') . '</li>';
+            }
+            echo '</ul>';
+            ?>
+        <?php endif; ?>
 
+        <?php if (have_rows('hard_skills')): ?>
         <?php custom_heading('Hard Skills'); ?>
-        <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>React.js</li>
-            <li>Node.js</li>
-            <li>Git</li>
-        </ul>
+        <?php
+            echo '<ul>';
+            while (the_repeater_field('hard_skills')) {
+                echo '<li>' . get_sub_field('skill1') . '</li>';
+                echo '<li>' . get_sub_field('skill2') . '</li>';
+                echo '<li>' . get_sub_field('skill3') . '</li>';
+                echo '<li>' . get_sub_field('skill4') . '</li>';
+            }
+            echo '</ul>';
+            ?>
+        <?php endif; ?>
 
         <?php custom_heading('Останні записи'); ?>
         <div class="recent-posts">
@@ -116,7 +106,8 @@
                 wp_reset_postdata();
             else :
                 ?>
-            <p>Записів поки немає. <a href="<?php echo esc_url(admin_url('post-new.php')); ?>">Створити перший запис</a>
+            <p>Записів поки немає. <a href="<?php echo esc_url(admin_url('post-new.php')); ?>">Створити перший
+                    запис</a>
             </p>
             <?php endif; ?>
         </div>
