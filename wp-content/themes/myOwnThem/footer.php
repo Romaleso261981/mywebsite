@@ -38,6 +38,8 @@
         </li>
     </ul>
     <p class="copyright">Copyright &copy;2020 All rights reserved</p>
+
+    <?php wp_footer(); ?>
 </footer>
 </body>
 

@@ -6,6 +6,12 @@ function my_theme_enqueue_styles()
     wp_enqueue_style('my-theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
 }
 
+add_action('wp_footer', 'my_theme_enqueue_scripts');
+function my_theme_enqueue_scripts()
+{
+    wp_enqueue_script('my-theme-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.0', true);
+}
+
 add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_setup()
 {
