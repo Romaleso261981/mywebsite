@@ -21,7 +21,7 @@ add_action('wp_enqueue_scripts', 'lidia_scripts');
 function lidia_register_menus()
 {
     register_nav_menus(array(
-        'header' => 'Header Menu',
+        'header' => esc_html__('Header Menu', 'lidia'),
     ));
 }
 

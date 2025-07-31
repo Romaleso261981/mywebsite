@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-    <title>Lidia</title>
+    <?php wp_title('|', true, 'right'); ?>
 </head>
 
 <body>
@@ -17,18 +17,13 @@
                 </a>
                 <nav class="header__menu menu">
                     <ul class="menu__list">
-                        <li class="menu__item">
-                            <a href="#features" class="menu__link">Feature</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#services" class="menu__link">Service</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#reviews" class="menu__link">Review</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#location" class="menu__link">Location</a>
-                        </li>
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'header',
+                            'menu_class' => 'menu__list',
+                            'container' => false,
+                        ));
+                        ?>
                     </ul>
                 </nav>
             </div>
