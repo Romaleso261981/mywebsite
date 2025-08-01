@@ -4,7 +4,7 @@
     <?php if (have_rows('blocks')) : ?>
     <?php while (have_rows('blocks')) : the_row(); ?>
     <?php if (get_row_layout() == 'hero') : ?>
-    <div class="hero">
+    <section class="hero">
         <div class="hero__container">
             <div class="hero__body">
                 <div class="hero__content">
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <?php endif; ?>
     <?php endwhile; ?>
     <?php else: ?>
