@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<?php
+$hero_content = get_field('hero_content', 'option');
+?>
 
 <main class="page">
     <section class="page__hero hero">
