@@ -11,9 +11,7 @@
     <div class="wrapper">
         <header id="header" class="header">
             <div class="header__container">
-                <a href="#header" class="header__logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo">
-                </a>
+                <?php the_custom_logo(); ?>
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <?php
