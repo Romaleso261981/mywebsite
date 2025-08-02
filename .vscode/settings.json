@@ -30,5 +30,7 @@
   },
   "php.validate.enable": true,
   "php.suggest.basic": false,
-  "intelephense.format.enable": true
+  "intelephense.format.enable": true,
+  "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+  "php.executablePath": "C:\\xampp\\php\\php.exe"
 }

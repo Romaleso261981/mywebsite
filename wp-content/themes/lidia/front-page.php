@@ -19,7 +19,7 @@
     <div class="page__container">
         <div class="page__body">
             <div class="page__content">
-                <h1 class="page__title">Front page</h1>
+                <h1 class="page__title">Front page not found</h1>
             </div>
         </div>
     </div>
