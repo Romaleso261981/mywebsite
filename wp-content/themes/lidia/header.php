@@ -16,9 +16,9 @@
                     <ul class="menu__list">
                         <?php
                         wp_nav_menu(array(
-                            'theme_location' => 'header',
-                            'menu_class' => 'menu__list',
-                            'container' => false,
+                          'theme_location' => 'header',
+                          'menu_class' => 'menu__list',
+                          'container' => false,
                         ));
                         ?>
                     </ul>

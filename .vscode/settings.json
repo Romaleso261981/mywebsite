@@ -1,36 +1,78 @@
 {
+  // Загальні налаштування редактора
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
+
+  // Налаштування для PHP файлів
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
   },
+
+  // Налаштування для HTML файлів
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
   },
+
+  // Налаштування для CSS файлів
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
   },
+
+  // Налаштування для JavaScript файлів
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
   },
+
+  // PHP налаштування
   "php.validate.enable": true,
-  "php.suggest.basic": false,
-  "intelephense.format.enable": true,
+  "php.suggest.basic": true,
   "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
-  "php.executablePath": "C:\\xampp\\php\\php.exe"
+  "php.executablePath": "C:\\xampp\\php\\php.exe",
+
+  // Intelephense налаштування (PHP розширення)
+  "intelephense.format.enable": true,
+  "intelephense.diagnostics.enable": true,
+  "intelephense.diagnostics.undefinedTypes": false,
+  "intelephense.diagnostics.undefinedFunctions": false,
+  "intelephense.diagnostics.undefinedConstants": false,
+  "intelephense.diagnostics.undefinedClassConstants": false,
+  "intelephense.diagnostics.undefinedMethods": false,
+  "intelephense.diagnostics.undefinedProperties": false,
+
+  // Налаштування валідації та форматування
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Налаштування для автоматичного форматування при збереженні
+  "editor.formatOnSaveMode": "file",
+
+  // Налаштування для показу помилок та попереджень
+  "problems.decorations.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  }
 }
