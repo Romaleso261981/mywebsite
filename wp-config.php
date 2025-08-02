@@ -98,7 +98,7 @@ define('WP_DEBUG_DISPLAY', false);
 
 /** Absolute path to the WordPress directory. */
 if (! defined('ABSPATH')) {
-    define('ABSPATH', __DIR__ . '/');
+  define('ABSPATH', __DIR__ . '/');
 }
 
 /** Sets up WordPress vars and included files. */
