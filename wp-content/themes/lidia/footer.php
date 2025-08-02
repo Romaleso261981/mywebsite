@@ -4,6 +4,8 @@
     $footer_slogan = get_field('footer_slogan', 'option');
     ?>
 
+    <?php /* Debug: <?php print_r($footer_socials); ?> */ ?>
+
     <footer class="footer">
         <div class="footer__body">
             <div class="footer__container">
@@ -13,10 +15,10 @@
                     </h4>
                     <?php if ($footer_logo['footer_logo']): ?>
                         <?php echo wp_get_attachment_image(
-                            $footer_logo['footer_logo'],
-                            "medium",
-                            false,
-                            ['class' => 'footer__logo']
+                          $footer_logo['footer_logo'],
+                          "medium",
+                          false,
+                          ['class' => 'footer__logo']
                         )
                         ?>
                     <?php endif; ?>
@@ -30,15 +32,16 @@
                     <div class="footer__social social">
                         <?php
                         if ($footer_socials['social_item']):
-                            foreach ($footer_socials['social_item'] as $social_item):
-                                if ($social_item['social_item_image']):
+                          foreach ($footer_socials['social_item'] as $social_item):
+                            if ($social_item['social_item_image']):
                         ?>
-                                    <a href="#" class="social__item" target="_blank">
+                                    <a href="<?php echo esc_url($social_item['link']); ?>" class="social__item" target="_blank"
+                                        rel="noopener noreferrer">
                                         <?php echo wp_get_attachment_image($social_item['social_item_image'], 'thumbnail', false, ['alt' => 'Social Media Icon']); ?>
                                     </a>
                         <?php
-                                endif;
-                            endforeach;
+                            endif;
+                          endforeach;
                         endif;
                         ?>
                     </div>
