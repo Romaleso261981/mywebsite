@@ -1,6 +1,6 @@
 <?php
 $title = get_sub_field('location_title');
-$location = get_sub_field('location_map_link');
+$location = get_sub_field('location_map');
 ?>
 
 <?php
