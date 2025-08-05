@@ -34,3 +34,10 @@ require_once get_template_directory() . '/includes/functions-cleanup.php';
 
 // Підключаємо файл відключення помилок WP
 require_once get_template_directory() . '/includes/disable-wp-textdomain-error.php';
+
+// Goog;e Maps API Key for ACF
+function my_acf_init()
+{
+    acf_update_setting('google_api_key', '4fb6bcb25bb0b9524f57b7cc29ba363abe587ce0');
+}
+add_action('acf/init', 'my_acf_init');
