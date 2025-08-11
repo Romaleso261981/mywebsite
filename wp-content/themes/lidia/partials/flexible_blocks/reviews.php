@@ -1,6 +1,6 @@
 <?php
 $title = get_sub_field('reviews_title');
-$cards = get_sub_field('reviews_cards');
+$reviews_list = get_sub_field('reviews_list');
 ?>
 
 
@@ -12,22 +12,21 @@ $cards = get_sub_field('reviews_cards');
     </div>
     <div class="reviews__body">
       <div class="reviews__items">
-        <?php foreach ($cards as $index => $card) : ?>
+        <?php foreach ($reviews_list as $index => $review_id) : ?>
         <article class="reviews__item">
-          <a href="<?php echo $card['image_url']; ?>" class="reviews__link-avatar">
-            <?php echo wp_get_attachment_image($card['image'], 'full'); ?>
+          <a href="<?php echo get_the_permalink($review_id); ?>" class="reviews__link-avatar">
+            <?php echo get_the_post_thumbnail($review_id, 'full', array('class' => 'reviews__avatar')); ?>
           </a>
           <div class="reviews__text">
-            <p><?php echo $card['card_description']; ?></p>
+            <p><?php echo get_the_excerpt($review_id); ?></p>
           </div>
           <h4 class="reviews__title">
-            <a href="<?php echo $card['image_url']; ?>"
-              class="reviews__link-title"><?php echo $card['card_title_']; ?></a>
+            <a href="<?php echo get_the_permalink($review_id); ?>"
+              class="reviews__link-title"><?php echo get_the_title($review_id); ?></a>
           </h4>
-          <div class="reviews__position"><?php echo $card['card_sub_title']; ?></div>
+          <div class="reviews__position"><?php echo get_field('position', $review_id); ?></div>
         </article>
         <?php endforeach; ?>
-
       </div>
     </div>
   </div>

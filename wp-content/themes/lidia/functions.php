@@ -81,6 +81,43 @@ function lidia_register_services_post_type()
 add_action('init', 'lidia_register_services_post_type');
 
 /**
+ * Custom reviews post type
+ */
+function lidia_register_reviews_post_type()
+{
+    $labels = array(
+        'name' => 'Reviews',
+        'singular_name' => 'Review',
+        'menu_name' => 'Reviews',
+        'all_items' => 'All Reviews',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Review',
+        'edit_item' => 'Edit Review',
+        'new_item' => 'New Review',
+        'view_item' => 'View Review',
+        'search_items' => 'Search Reviews',
+        'not_found' => 'No reviews found',
+        'not_found_in_trash' => 'No reviews found in Trash',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'reviews'),
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_icon' => 'dashicons-star-filled',
+        'menu_position' => 5,
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+    );
+    register_post_type('reviews', $args);
+};
+
+add_action('init', 'lidia_register_reviews_post_type');
+
+/**
  * Custom services taxonomy
  */
 function lidia_register_services_taxonomy()

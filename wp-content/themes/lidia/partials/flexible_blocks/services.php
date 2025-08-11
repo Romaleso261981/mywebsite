@@ -1,6 +1,5 @@
 <?php
 $title = get_sub_field('services_title');
-$cards = get_sub_field('services_card');
 $services_list = get_sub_field('services_list');
 ?>
 
