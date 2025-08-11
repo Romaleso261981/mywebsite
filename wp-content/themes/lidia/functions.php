@@ -41,3 +41,70 @@ function my_acf_init()
     acf_update_setting('google_api_key', '4fb6bcb25bb0b9524f57b7cc29ba363abe587ce0');
 }
 add_action('acf/init', 'my_acf_init');
+
+/**
+ * Custom services post type
+ */
+function lidia_register_services_post_type()
+{
+    $labels = array(
+        'name' => 'Services',
+        'singular_name' => 'Service',
+        'menu_name' => 'Services',
+        'all_items' => 'All Services',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Service',
+        'edit_item' => 'Edit Service',
+        'new_item' => 'New Service',
+        'view_item' => 'View Service',
+        'search_items' => 'Search Services',
+        'not_found' => 'No services found',
+        'not_found_in_trash' => 'No services found in Trash',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'services'),
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_icon' => 'dashicons-book',
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-book',
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+    );
+    register_post_type('services', $args);
+};
+
+add_action('init', 'lidia_register_services_post_type');
+
+/**
+ * Custom services taxonomy
+ */
+function lidia_register_services_taxonomy()
+{
+    $labels = array(
+        'name' => 'Services Categories',
+        'singular_name' => 'Services Category',
+        'menu_name' => 'Services Categories',
+        'all_items' => 'All Services Categories',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Services Category',
+        'edit_item' => 'Edit Services Category',
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+    );
+
+    register_taxonomy('services_category', 'services', $args);
+}
+
+add_action('init', 'lidia_register_services_taxonomy');
