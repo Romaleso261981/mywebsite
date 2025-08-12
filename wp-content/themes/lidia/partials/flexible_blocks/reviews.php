@@ -3,7 +3,6 @@ $title = get_sub_field('reviews_title');
 $reviews_list = get_sub_field('reviews_list');
 ?>
 
-
 <section id="reviews" class="page__reviews reviews">
   <div class="reviews__container">
     <div class="reviews__header-block header-block header-block--margin">
